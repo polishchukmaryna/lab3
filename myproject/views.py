@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
-# from django.http import HttpResponse
+from django.http import HttpResponse
 
 
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the libraryapp index.")
+def index(request):
+    return HttpResponse("Hello, world. You're at the libraryapp index.")
 
 # from django.contrib.auth.models import Author, Book, Feedback, Genre, Purchases, Reader, Shop, AuthorBook, AvailableBooks, BookGenre
 # from rest_framework import permissions, viewsets

@@ -19,25 +19,25 @@ from django.contrib import admin
 from django.urls import include, path
 from . import views
 
-from rest_framework import routers
-from tutorial.quickstart import views
+# from rest_framework import routers
+# from tutorial.quickstart import views
 
-router = routers.DefaultRouter()
-router.register(r'authors', views.AuthorViewSet)
-router.register(r'books', views.BookViewSet)
-router.register(r'feedbacks', views.FeedbackViewSet)
-router.register(r'genres', views.GenreViewSet)
-router.register(r'purchasess', views.PurchasesViewSet)
-router.register(r'readers', views.ReaderViewSet)
-router.register(r'shops', views.ShopViewSet)
-router.register(r'authorBooks', views.AuthorBookViewSet)
-router.register(r' availableBookss', views.AvailableBooksViewSet)
-router.register(r'bookGenres', views.BookGenreViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'authors', views.AuthorViewSet)
+# router.register(r'books', views.BookViewSet)
+# router.register(r'feedbacks', views.FeedbackViewSet)
+# router.register(r'genres', views.GenreViewSet)
+# router.register(r'purchasess', views.PurchasesViewSet)
+# router.register(r'readers', views.ReaderViewSet)
+# router.register(r'shops', views.ShopViewSet)
+# router.register(r'authorBooks', views.AuthorBookViewSet)
+# router.register(r' availableBookss', views.AvailableBooksViewSet)
+# router.register(r'bookGenres', views.BookGenreViewSet)
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-]
+# urlpatterns = [
+#     path('', include(router.urls)),
+#     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+# ]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
