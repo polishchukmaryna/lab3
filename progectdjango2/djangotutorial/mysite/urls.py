@@ -17,8 +17,27 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
+from polls import views
+# from djangotutorial.polls import views
 
+# from rest_framework.authtoken import views as drf_views
+
+router = routers.DefaultRouter()
+router.register(r'authors', views.AuthorViewSet)
+router.register(r'books', views.BookViewSet)
+router.register(r'feedbacks', views.FeedbackViewSet)
+router.register(r'purchases', views.PurchasesViewSet)
+router.register(r'readers', views.ReaderViewSet)
+router.register(r'shops', views.ShopViewSet)
+
+# Register all endpoints of the site here
+# реєструємо все до чого ми можемо доступатися
 urlpatterns = [
-    path("polls/", include("polls.urls")),
-    path("admin/", admin.site.urls),
+    path("polls/", include("polls.urls")), # View routes
+    path("admin/", admin.site.urls), 
+    path('api/', include(router.urls)), # API Routes
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # path('api-token-auth/', drf_views.obtain_auth_token),  # Endpoint для отримання токену
 ]
